@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юридическая библиотека — Учебный портал для юристов</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #6f42c1;
+            --secondary: #2980b9;
+            --success: #27ae60;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --info: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        body {
+            background: linear-gradient(135deg, #72f6ffff, #f5f9ff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+
+        /* Цветные кнопки */
+        .btn-primary-grad {
+            background: linear-gradient(135deg, var(--primary), #8e44ad);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 8px rgba(111, 66, 193, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-primary-grad:hover {
+            background: linear-gradient(135deg, #5a32a3, #7d3c98);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(111, 66, 193, 0.4);
+        }
+
+        .btn-secondary-grad {
+            background: linear-gradient(135deg, var(--secondary), #1f618d);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
+        }
+        .btn-secondary-grad:hover {
+            background: linear-gradient(135deg, #1f618d, #1a5276);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(41, 128, 185, 0.4);
+        }
+
+        .btn-success-grad {
+            background: linear-gradient(135deg, var(--success), #2ecc71);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+        }
+        .btn-success-grad:hover {
+            background: linear-gradient(135deg, #219653, #27ae60);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-danger-grad {
+            background: linear-gradient(135deg, var(--danger), #c0392b);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+        .btn-danger-grad:hover {
+            background: linear-gradient(135deg, #c0392b, #a93226);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-warning-grad {
+            background: linear-gradient(135deg, var(--warning), #e67e22);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+        }
+        .btn-warning-grad:hover {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(243, 156, 18, 0.4);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(244, 255, 163, 0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1589903306662-f2b441614166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            padding: 60px 20px;
+            border-radius: 20px;
+            position: relative;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #dee2e6;
+            background-color: #fff8e1; 
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+        }
+
+        .law-card {
+            transition: all 0.4s ease;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+        .law-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: rgba(0,0,0,0.05);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .separator {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d0d0d0, transparent);
+            margin: 30px 0;
+        }
+
+        .tip-box {
+            background: #fff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .tip-box h5 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, var(--primary), #8f94fb);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(111, 66, 193, 0.3);
+        }
+
+        .banner i {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .feature-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+       .law-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .law-card .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+
+        /* Кастомизация кнопок в карточках */
+        .law-card .btn {
+            transition: all 0.3s ease;
+        }
+        .law-card .btn:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 15px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .icon {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-3">
+    <div class="row g-3 mb-4">
+        <div class="col-md-12">
+            <h5 class="mb-2 text-secondary"><i class="fas fa-sign-in-alt me-2"></i>Вход в систему</h5>
+        </div>
+    </div>
+
+    <form action="login.php" method="POST" class="row g-3 align-items-center">
+        <div class="col-md-3">
+            <input type="text" name="login" class="form-control" placeholder="Введите логин" required>
+        </div>
+
+        <div class="col-md-3">
+            <input type="password" name="password" class="form-control" placeholder="Введите пароль" required>
+        </div>
+
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary-grad w-100">Войти</button>
+        </div>
+
+        <div class="col-md-2">
+            <a href="#" class="btn btn-secondary-grad w-100" data-bs-toggle="modal" data-bs-target="#registerModal">
+                <i class="fas fa-user-plus me-1"></i>Регистрация
+            </a>
+        </div>
+
+        <div class="col-md-2">
+            <a href="#" class="btn btn-warning-grad w-100" data-bs-toggle="modal" data-bs-target="#forgotModal">
+                <i class="fas fa-key me-1"></i>Забыли пароль?
+            </a>
+        </div>
+    </form>
+
+    <div class="separator"></div>
+</div>
+
+<div class="container">
+
+    <!-- HERO Блок -->
+    <div class="hero shadow">
+        <div class="hero-content text-center">
+            <h1 class="text-center mb-3" style="font-size: 42px; font-weight: 700;">
+                <i class="fas fa-gavel text-primary me-2"></i>Юридическая библиотека
+            </h1>
+            <p class="text-center fs-5 text-muted mb-4">
+                Все важные документы, справочники и кодексы — в одном месте. Для студентов, практикантов и начинающих юристов.
+            </p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="#" class="btn btn-outline-primary"><i class="fas fa-search me-2"></i>Поиск по базе</a>
+                <a href="#" class="btn btn-outline-success"><i class="fas fa-book-open me-2"></i>Популярные материалы</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Полезный баннер для студентов -->
+    <div class="banner">
+        <i class="fas fa-lightbulb"></i>
+        <strong>Совет студенту:</strong> Начните с изучения ГК РФ и УК РФ — они лежат в основе большинства дел. Используйте шаблоны документов для практических заданий!
+    </div>
+
+    <!-- Полезная подсказка -->
+    <div class="tip-box">
+        <h5><i class="fas fa-info-circle me-2"></i>Полезная фишка</h5>
+        <p>В каждом разделе вы найдете не только кодексы, но и <strong>анализ сложных статей</strong>, <strong>разборы судебных решений</strong> и <strong>шаблоны для составления документов</strong>. Это поможет вам лучше понять материал и применить его на практике.</p>
+    </div>
+
+    <!-- Выбор разделов -->
+    <p class="text-center mb-5 fs-5 text-secondary">
+        Выберите нужный раздел:
+    </p>
+
+    <div class="row g-4">
+
+        <!-- Гражданское право -->
+        <div class="col-md-4">
+            <div class="card law-card shadow-sm border-primary">
+                <div class="card-body text-center">
+                    <div class="icon text-primary"><i class="fas fa-book-open"></i></div>
+                    <h4 class="card-title text-primary mt-2">Гражданское право</h4>
+                    <p class="text-muted small">ГК РФ, договоры, сделки, наследство, обязательства</p>
+                    <a href="section.php?section=civil" class="btn btn-primary mt-3 w-100">Перейти</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Уголовное право -->
+        <div class="col-md-4">
+            <div class="card law-card shadow-sm border-danger">
+                <div class="card-body text-center">
+                    <div class="icon text-danger"><i class="fas fa-balance-scale"></i></div>
+                    <h4 class="card-title text-danger mt-2">Уголовное право</h4>
+                    <p class="text-muted small">УК РФ, состав преступления, наказания, уголовные дела</p>
+                    <a href="section.php?section=criminal" class="btn btn-danger mt-3 w-100">Перейти</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card law-card shadow-sm border-success">
+                <div class="card-body text-center">
+                    <div class="icon text-success"><i class="fas fa-file-contract"></i></div>
+                    <h4 class="card-title text-success mt-2">Административное право</h4>
+                    <p class="text-muted small">КоАП РФ, административные правонарушения, штрафы, процедуры</p>
+                    <a href="section.php?section=admin" class="btn btn-success mt-3 w-100">Перейти</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Дополнительные ресурсы -->
+    <div class="mt-5">
+        <h3 class="text-center mb-4 text-secondary"><i class="fas fa-star me-2"></i>Для вас, будущие юристы!</h3>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>Полезные ссылки</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li><a href="https://stepik.org/course/148230/promo" target="_blank" class="text-decoration-none">Бесплатные онлайн-курсы по гражданскому праву</a></li>
+                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#courtPracticeModal" class="text-decoration-none">Видео разборы судебных дел</a></li>
+                            <li><a href="https://calc.consultant.ru/" target="_blank" class="text-decoration-none">Калькуляторы</a></li>
+                            <li><a href="https://www.consultant.ru/law/hotdocs/" target="_blank" class="text-decoration-none">Новые законы РФ, указы Президента, постановления Правительства</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-question-circle me-2"></i>Часто задаваемые вопросы</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li><a href="https://xn--d1aizi.xn--p1ai/categories/iskovye-zaiavleniia?utm_source=yandex&utm_medium=cpc&utm_campaign=704739548&utm_content=17397923722&utm_term=%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5&etext=2202.HkZ0DmZfUETIP_K48ySy0-JDiSo-Rv0pWikRMwj5Kc6vK45VWr63Xm6IRDLAzrsdPE7EYW4fLm4gf-eHf4s6VEA7Oi0pl53XWDcjBcCkjPa4o81n-1eWG-PLPDeaWYcacWtoZ2hmbXR4bW9ubXRpYg.cdf50d22051548818d5363f8af239851c2c22f07&yclid=457724176486367231&ybaip=1" target="_blank" class="text-decoration-none">Как правильно оформить исковое заявление?</a></li>
+                            <li><a href="https://dzen.ru/a/YNmD91ksjFHUdxHA?ysclid=miovl3hcc671294623" target="_blank" class="text-decoration-none">Какие статьи УК РФ чаще всего применяются?</a></li>
+                            <li><a href="https://www.consultant.ru/" target="_blank" class="text-decoration-none">Как найти актуальную редакцию кодекса?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Модальное окно "Забыли пароль?" -->
+<div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="forgotModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--warning), #e67e22); color: white;">
+                <h5 class="modal-title" id="forgotModalLabel"><i class="fas fa-key me-2"></i>Восстановление доступа</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Введите ваш email, мы отправим инструкции по восстановлению пароля.</p>
+                <input type="text" class="form-control mb-3" placeholder="Email или логин">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-warning-grad">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно "Регистрация" -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--secondary), #1f618d); color: white;">
+                <h5 class="modal-title" id="registerModalLabel"><i class="fas fa-user-plus me-2"></i>Регистрация нового пользователя</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form action="register.php" method="POST">
+                    <div class="mb-3">
+                        <label for="regLogin" class="form-label">Логин (email)</label>
+                        <input type="text" class="form-control" id="regLogin" name="login" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="regPassword" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="regPassword" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="regConfirmPassword" class="form-label">Подтвердите пароль</label>
+                        <input type="password" class="form-control" id="regConfirmPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="regName" class="form-label">Имя и Фамилия</label>
+                        <input type="text" class="form-control" id="regName" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="regInstitution" class="form-label">Учебное заведение</label>
+                        <input type="text" class="form-control" id="regInstitution" name="institution" placeholder="Например: МГУ, РАНХиГС, Юридический факультет...">
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-secondary-grad">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно "Видео разборы судебных дел" -->
+<div class="modal fade" id="courtPracticeModal" tabindex="-1" aria-labelledby="courtPracticeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--danger), #c0392b); color: white;">
+                <h5 class="modal-title" id="courtPracticeModalLabel"><i class="fas fa-video me-2"></i>Видео разборы судебных дел</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Ниже представлены полезные ресурсы для изучения судебной практики:</p>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">Судебная практика по гражданским делам</h6>
+                                <p class="card-text">Подробные разборы реальных дел и комментарии экспертов.</p>
+                                <a href="https://sudact.ru/practice/sudebnaya-praktika-po-grazhdanskim-delam/?ysclid=miovhgwrha692529689" target="_blank" class="btn btn-outline-primary btn-sm">Перейти к практике</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">Судебная практика по уголовным делам</h6>
+                                <p class="card-text">Анализ вердиктов, приговоров и апелляционных жалоб.</p>
+                                <a href="https://sudact.ru/practice/sudebnaya-praktika-po-ugolovnym-delam/" target="_blank" class="btn btn-outline-danger btn-sm">Перейти к практике</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
