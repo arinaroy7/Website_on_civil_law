@@ -85,7 +85,6 @@ if (is_dir($_SERVER['DOCUMENT_ROOT'] . '/' . $bookDir)) {
     <div class="container mt-4 mb-5">
         <h1 class="text-center mb-5 text-<?= $color ?>"><?= htmlspecialchars($title) ?></h1>
 
-        <!-- Книги -->
         <section class="mb-5">
             <h2 class="text-<?= $color ?> border-bottom pb-2">📚 Книги</h2>
             <?php if (!empty($books)): ?>
@@ -105,7 +104,6 @@ if (is_dir($_SERVER['DOCUMENT_ROOT'] . '/' . $bookDir)) {
             <?php endif; ?>
         </section>
 
-        <!-- Кодексы -->
         <section class="mb-5">
             <h2 class="text-<?= $color ?> border-bottom pb-2">⚖️ Кодексы</h2>
             <div class="list-group">
@@ -119,7 +117,6 @@ if (is_dir($_SERVER['DOCUMENT_ROOT'] . '/' . $bookDir)) {
             </div>
         </section>
 
-        <!-- Шаблоны документов -->
         <section>
             <h2 class="text-<?= $color ?> border-bottom pb-2">📝 Шаблоны документов</h2>
             <?php foreach ($current['templates'] as $index => $name): ?>

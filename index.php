@@ -26,8 +26,6 @@
             padding-top: 20px;
             padding-bottom: 40px;
         }
-
-        /* Цветные кнопки */
         .btn-primary-grad {
             background: linear-gradient(135deg, var(--primary), #8e44ad);
             color: white;
@@ -256,7 +254,6 @@
 
 <div class="container">
 
-    <!-- HERO Блок -->
     <div class="hero shadow">
         <div class="hero-content text-center">
             <h1 class="text-center mb-3" style="font-size: 42px; font-weight: 700;">
@@ -272,45 +269,40 @@
         </div>
     </div>
 
-    <!-- Полезный баннер для студентов -->
     <div class="banner">
         <i class="fas fa-lightbulb"></i>
         <strong>Совет студенту:</strong> Начните с изучения ГК РФ и УК РФ — они лежат в основе большинства дел. Используйте шаблоны документов для практических заданий!
     </div>
 
-    <!-- Полезная подсказка -->
     <div class="tip-box">
         <h5><i class="fas fa-info-circle me-2"></i>Полезная фишка</h5>
         <p>В каждом разделе вы найдете не только кодексы, но и <strong>анализ сложных статей</strong>, <strong>разборы судебных решений</strong> и <strong>шаблоны для составления документов</strong>. Это поможет вам лучше понять материал и применить его на практике.</p>
     </div>
 
-    <!-- Выбор разделов -->
     <p class="text-center mb-5 fs-5 text-secondary">
         Выберите нужный раздел:
     </p>
 
     <div class="row g-4">
 
-        <!-- Гражданское право -->
         <div class="col-md-4">
             <div class="card law-card shadow-sm border-primary">
                 <div class="card-body text-center">
                     <div class="icon text-primary"><i class="fas fa-book-open"></i></div>
                     <h4 class="card-title text-primary mt-2">Гражданское право</h4>
                     <p class="text-muted small">ГК РФ, договоры, сделки, наследство, обязательства</p>
-                    <a href="section.php?section=civil" class="btn btn-primary mt-3 w-100">Перейти</a>
+                    <a href="civil.html" class="btn btn-primary mt-3 w-100">Перейти</a>
                 </div>
             </div>
         </div>
 
-        <!-- Уголовное право -->
         <div class="col-md-4">
             <div class="card law-card shadow-sm border-danger">
                 <div class="card-body text-center">
                     <div class="icon text-danger"><i class="fas fa-balance-scale"></i></div>
                     <h4 class="card-title text-danger mt-2">Уголовное право</h4>
-                    <p class="text-muted small">УК РФ, состав преступления, наказания, уголовные дела</p>
-                    <a href="section.php?section=criminal" class="btn btn-danger mt-3 w-100">Перейти</a>
+                    <p class="text-muted small">УК РФ, состав преступления, наказания, уголовные дела</p>      
+                    <a href="criminal.html" class="btn btn-danger mt-3 w-100">Перейти</a>
                 </div>
             </div>
         </div>
@@ -320,14 +312,13 @@
                     <div class="icon text-success"><i class="fas fa-file-contract"></i></div>
                     <h4 class="card-title text-success mt-2">Административное право</h4>
                     <p class="text-muted small">КоАП РФ, административные правонарушения, штрафы, процедуры</p>
-                    <a href="section.php?section=admin" class="btn btn-success mt-3 w-100">Перейти</a>
+                    <a href="admin.html" class="btn btn-success mt-3 w-100">Перейти</a>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- Дополнительные ресурсы -->
     <div class="mt-5">
         <h3 class="text-center mb-4 text-secondary"><i class="fas fa-star me-2"></i>Для вас, будущие юристы!</h3>
         <div class="row g-4">
@@ -364,8 +355,6 @@
     </div>
 
 </div>
-
-<!-- Модальное окно "Забыли пароль?" -->
 <div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="forgotModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -427,7 +416,6 @@
     </div>
 </div>
 
-<!-- Модальное окно "Видео разборы судебных дел" -->
 <div class="modal fade" id="courtPracticeModal" tabindex="-1" aria-labelledby="courtPracticeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
