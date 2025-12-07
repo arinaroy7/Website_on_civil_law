@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Административное право - Юридическая библиотека</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --success: #27ae60;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e8f5e9, #ffffff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(135deg, #27ae60, #219653);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+        }
+        
+        .law-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            border: 2px solid #d4edda;
+            margin-bottom: 20px;
+        }
+        
+        .law-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.15);
+        }
+        
+        .section-title {
+            color: var(--success);
+            border-left: 5px solid var(--success);
+            padding-left: 15px;
+            margin-top: 30px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .article-card {
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #f8fff9;
+            border-radius: 8px;
+        }
+        
+        .article-card h6 {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .nav-tabs .nav-link {
+            color: #27ae60;
+            font-weight: 500;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background-color: #27ae60;
+            color: white;
+            border-color: #27ae60;
+        }
+        
+        .badge-success {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+        
+        .list-group-item {
+            border-left: 3px solid #27ae60;
+            margin-bottom: 5px;
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-success:hover {
+            background: linear-gradient(135deg, #219653, #27ae60);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Кнопка назад -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left me-2"></i>Назад на главную
+        </a>
+        <div class="text-muted">
+            <i class="fas fa-calendar-alt me-1"></i> Актуально на 2025 год
+        </div>
+    </div>
+    
+    <!-- Заголовок -->
+    <div class="header text-center">
+        <h1 class="display-5 fw-bold">
+            <i class="fas fa-file-contract me-3"></i>Административное право
+        </h1>
+        <p class="lead mb-0">Кодекс об административных правонарушениях (КоАП РФ), процедуры, штрафы, обжалование</p>
+    </div>
+    
+    <!-- Вкладки -->
+    <ul class="nav nav-tabs mb-4" id="adminTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="koap-tab" data-bs-toggle="tab" data-bs-target="#koap" type="button">
+                <i class="fas fa-book me-2"></i>КоАП РФ
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="practice-tab" data-bs-toggle="tab" data-bs-target="#practice" type="button">
+                <i class="fas fa-gavel me-2"></i>Практика
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="docs-tab" data-bs-toggle="tab" data-bs-target="#docs" type="button">
+                <i class="fas fa-file-download me-2"></i>Документы
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="resources-tab" data-bs-toggle="tab" data-bs-target="#resources" type="button">
+                <i class="fas fa-link me-2"></i>Ресурсы
+            </button>
+        </li>
+    </ul>
+    
+    <div class="tab-content" id="adminTabContent">
+        
+        <!-- Вкладка КоАП РФ -->
+        <div class="tab-pane fade show active" id="koap" role="tabpanel">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card law-card">
+                        <div class="card-body">
+                            <h3 class="section-title">Кодекс об административных правонарушениях</h3>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <h5><i class="fas fa-car text-success me-2"></i>Транспортные правонарушения</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Нарушения ПДД</li>
+                                        <li class="list-group-item">Управление без прав</li>
+                                        <li class="list-group-item">Превышение скорости</li>
+                                        <li class="list-group-item">Парковка в неположенном месте</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><i class="fas fa-store text-success me-2"></i>Предпринимательство</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Незаконная торговля</li>
+                                        <li class="list-group-item">Нарушения в рекламе</li>
+                                        <li class="list-group-item">Несоблюдение лицензий</li>
+                                        <li class="list-group-item">Нарушения трудового законодательства</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <h5><i class="fas fa-users text-success me-2"></i>Общественный порядок</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Мелкое хулиганство</li>
+                                        <li class="list-group-item">Распитие алкоголя</li>
+                                        <li class="list-group-item">Нарушение тишины</li>
+                                        <li class="list-group-item">Нецензурная брань</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><i class="fas fa-shield-alt text-success me-2"></i>Безопасность</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Нарушение пожарной безопасности</li>
+                                        <li class="list-group-item">Санитарные нарушения</li>
+                                        <li class="list-group-item">Экологические правонарушения</li>
+                                        <li class="list-group-item">Нарушения в строительстве</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_34661/" target="_blank" class="btn btn-success btn-lg">
+                                    <i class="fas fa-external-link-alt me-2"></i>Открыть полный текст КоАП РФ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card law-card">
+                        <div class="card-body">
+                            <h4 class="section-title">Популярные статьи</h4>
+                            
+                            <div class="article-card">
+                                <h6>Статья 12.8 КоАП РФ</h6>
+                                <p class="mb-2"><strong>Управление в состоянии опьянения</strong></p>
+                                <p class="small text-muted mb-1">Штраф: 30 000 рублей + лишение прав на 1.5-2 года</p>
+                                <span class="badge badge-success">Транспорт</span>
+                            </div>
+                            
+                            <div class="article-card">
+                                <h6>Статья 20.1 КоАП РФ</h6>
+                                <p class="mb-2"><strong>Мелкое хулиганство</strong></p>
+                                <p class="small text-muted mb-1">Штраф: 500-1 000 рублей или арест до 15 суток</p>
+                                <span class="badge badge-success">Общественный порядок</span>
+                            </div>
+                            
+                            <div class="article-card">
+                                <h6>Статья 14.1 КоАП РФ</h6>
+                                <p class="mb-2"><strong>Незаконное предпринимательство</strong></p>
+                                <p class="small text-muted mb-1">Штраф: 500-2 000 рублей + конфискация продукции</p>
+                                <span class="badge badge-success">Бизнес</span>
+                            </div>
+                            
+                            <div class="article-card">
+                                <h6>Статья 12.9 КоАП РФ</h6>
+                                <p class="mb-2"><strong>Превышение скорости</strong></p>
+                                <p class="small text-muted mb-1">Штраф: 500-5 000 рублей или лишение прав до 6 месяцев</p>
+                                <span class="badge badge-success">Транспорт</span>
+                            </div>
+                            
+                            <div class="article-card">
+                                <h6>Статья 6.3 КоАП РФ</h6>
+                                <p class="mb-2"><strong>Нарушение санитарных правил</strong></p>
+                                <p class="small text-muted mb-1">Штраф: для граждан 100-500 руб, для юрлиц 10 000-20 000 руб</p>
+                                <span class="badge badge-success">Безопасность</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Вкладка Практика -->
+        <div class="tab-pane fade" id="practice" role="tabpanel">
+            <div class="card law-card">
+                <div class="card-body">
+                    <h3 class="section-title">Процедура обжалования постановлений</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="mb-0"><i class="fas fa-list-ol me-2"></i>Шаги обжалования</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ol class="mb-0">
+                                        <li class="mb-2"><strong>Получение постановления</strong> - в течение 3 дней с момента вынесения</li>
+                                        <li class="mb-2"><strong>Подготовка жалобы</strong> - в течение 10 суток с момента получения копии</li>
+                                        <li class="mb-2"><strong>Подача жалобы</strong> - в вышестоящий орган или районный суд</li>
+                                        <li class="mb-2"><strong>Рассмотрение</strong> - в течение 2 месяцев со дня поступления</li>
+                                        <li class="mb-2"><strong>Получение решения</strong> - в течение 3 дней после вынесения</li>
+                                        <li><strong>Дальнейшее обжалование</strong> - в вышестоящий суд в течение 10 дней</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="mb-0"><i class="fas fa-lightbulb me-2"></i>Советы по обжалованию</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="mb-0">
+                                        <li class="mb-2">Проверьте правильность составления протокола</li>
+                                        <li class="mb-2">Соберите доказательства (фото, видео, свидетели)</li>
+                                        <li class="mb-2">Укажите все нарушения процедуры</li>
+                                        <li class="mb-2">Ссылайтесь на судебную практику и разъяснения ВС РФ</li>
+                                        <li class="mb-2">Подавайте жалобу в последний день срока</li>
+                                        <li>Рассмотрите возможность мирового соглашения</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="section-title mt-4">Типичные ошибки при составлении протоколов</h4>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6><i class="fas fa-times-circle text-danger me-2"></i>Процессуальные</h6>
+                                    <p class="small">Отсутствие понятых, неправильное оформление, нарушение сроков</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6><i class="fas fa-times-circle text-danger me-2"></i>Фактические</h6>
+                                    <p class="small">Неверное определение состава правонарушения, ошибочная квалификация</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6><i class="fas fa-times-circle text-danger me-2"></i>Доказательственные</h6>
+                                    <p class="small">Недостаток доказательств, противоречивые показания, фальсификация</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Вкладка Документы -->
+        <div class="tab-pane fade" id="docs" role="tabpanel">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card law-card">
+                        <div class="card-body">
+                            <h3 class="section-title">Шаблоны документов</h3>
+                            
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-file-alt text-success me-3"></i>
+                                        <strong>Жалоба на постановление</strong>
+                                        <div class="small text-muted">Образец с комментариями</div>
+                                    </div>
+                                    <span class="badge badge-success">DOC</span>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-file-alt text-success me-3"></i>
+                                        <strong>Ходатайство об отсрочке</strong>
+                                        <div class="small text-muted">Просьба об отсрочке уплаты штрафа</div>
+                                    </div>
+                                    <span class="badge badge-success">PDF</span>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-file-alt text-success me-3"></i>
+                                        <strong>Заявление о рассрочке</strong>
+                                        <div class="small text-muted">Просьба о рассрочке уплаты штрафа</div>
+                                    </div>
+                                    <span class="badge badge-success">DOC</span>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-file-alt text-success me-3"></i>
+                                        <strong>Жалоба в прокуратуру</strong>
+                                        <div class="small text-muted">На действия должностных лиц</div>
+                                    </div>
+                                    <span class="badge badge-success">PDF</span>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-file-alt text-success me-3"></i>
+                                        <strong>Ходатайство о свидетелях</strong>
+                                        <div class="small text-muted">Вызов свидетелей по делу</div>
+                                    </div>
+                                    <span class="badge badge-success">DOC</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card law-card">
+                        <div class="card-body">
+                            <h3 class="section-title">Калькуляторы и справочники</h3>
+                            
+                            <div class="list-group">
+                                <a href="https://www.gibdd.ru/calculator/shtraf/" target="_blank" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-calculator text-success me-3"></i>
+                                    <strong>Калькулятор штрафов ГИБДД</strong>
+                                    <div class="small text-muted">Расчет штрафов за нарушения ПДД</div>
+                                </a>
+                                
+                                <a href="https://calc.consultant.ru/" target="_blank" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-calculator text-success me-3"></i>
+                                    <strong>Калькулятор сроков давности</strong>
+                                    <div class="small text-muted">Расчет сроков привлечения к ответственности</div>
+                                </a>
+                                
+                                <a href="https://service.nalog.ru/shtraf/" target="_blank" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-search-dollar text-success me-3"></i>
+                                    <strong>Проверка штрафов</strong>
+                                    <div class="small text-muted">Проверка административных штрафов по ИНН</div>
+                                </a>
+                                
+                                <a href="https://sudact.ru/practice/sudebnaya-praktika-po-administrativnym-delam/" target="_blank" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-gavel text-success me-3"></i>
+                                    <strong>Судебная практика</strong>
+                                    <div class="small text-muted">Архив административных дел</div>
+                                </a>
+                                
+                                <a href="https://www.garant.ru/" target="_blank" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-book text-success me-3"></i>
+                                    <strong>Комментарии к КоАП</strong>
+                                    <div class="small text-muted">Разъяснения к статьям КоАП РФ</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Вкладка Ресурсы -->
+        <div class="tab-pane fade" id="resources" role="tabpanel">
+            <div class="card law-card">
+                <div class="card-body">
+                    <h3 class="section-title">Полезные ресурсы и ссылки</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="mb-0"><i class="fas fa-university me-2"></i>Официальные сайты</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2">
+                                            <a href="https://www.gibdd.ru/" target="_blank" class="text-decoration-none">
+                                                <i class="fas fa-external-link-alt me-2"></i>ГИБДД РФ
+                                            </a>
+                                            <div class="small text-muted">Официальный сайт Госавтоинспекции</div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="https://fsin.gov.ru/" target="_blank" class="text-decoration-none">
+                                                <i class="fas fa-external-link-alt me-2"></i>ФСИН России
+                                            </a>
+                                            <div class="small text-muted">Федеральная служба исполнения наказаний</div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="https://www.mvd.gov.ru/" target="_blank" class="text-decoration-none">
+                                                <i class="fas fa-external-link-alt me-2"></i>МВД России
+                                            </a>
+                                            <div class="small text-muted">Министерство внутренних дел</div>
+                                        </li>
+                                        <li>
+                                            <a href="https://sudrf.ru/" target="_blank" class="text-decoration-none">
+                                                <i class="fas fa-external-link-alt me-2"></i>Судебный департамент
+                                            </a>
+                                            <div class="small text-muted">Информация о судах РФ</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>Образовательные ресурсы</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2">
+                                            <a href="https://stepik.org/course/148230/promo" target="_blank" class="text-decoration-none">
+                                                <i class="fas fa-video me-2"></i>Курс "Административное право"
+                                            </a>
+                                            <div class="small text-muted">Бесплатные лекции и тесты</div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="https://www.law.edu.ru/" target="_blank" class="text-decoration-none">
+                                                <i class="fas fa-book me-2"></i>Юридическая Россия
+                                            </a>
+                                            <div class="small text-muted">Портал для юристов и студентов</div>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="https://www.consultant.ru/edu/" target="_blank" class="text-decoration-none">
+                                                <i class="fas fa-chalkboard-teacher me-2"></i>КонсультантПлюс: Обучение
+                                            </a>
+                                            <div class="small text-muted">Учебные материалы и семинары</div>
+                                        </li>
+                                        <li>
+                                            <a href="https://pravo.gov.ru/" target="_blank" class="text-decoration-none">
+                                                <i class="fas fa-landmark me-2"></i>Официальный правовой портал
+                                            </a>
+                                            <div class="small text-muted">Официальные тексты законов</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="section-title mt-4">Рекомендуемая литература</h4>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6>Комментарий к КоАП РФ</h6>
+                                    <p class="small">Под ред. Ю.М. Козлова</p>
+                                    <span class="badge badge-success">Учебник</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6>Административное право России</h6>
+                                    <p class="small">Д.Н. Бахрах</p>
+                                    <span class="badge badge-success">Курс лекций</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6>Судебная практика по КоАП</h6>
+                                    <p class="small">Сборник ВС РФ</p>
+                                    <span class="badge badge-success">Практика</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Статистика -->
+    <div class="card law-card mt-4">
+        <div class="card-body">
+            <h3 class="section-title">Статистика административных правонарушений</h3>
+            <div class="row text-center">
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="text-success">68%</h2>
+                            <p class="small mb-0">Транспортные нарушения</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="text-success">15%</h2>
+                            <p class="small mb-0">Нарушения общественного порядка</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="text-success">12%</h2>
+                            <p class="small mb-0">Предпринимательские нарушения</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="text-success">5%</h2>
+                            <p class="small mb-0">Прочие правонарушения</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Кнопка обратно -->
+    <div class="text-center mt-4">
+        <a href="index.html" class="btn btn-success btn-lg">
+            <i class="fas fa-home me-2"></i>Вернуться на главную страницу
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var adminTab = document.getElementById('adminTab');
+        if (adminTab) {
+            var tab = new bootstrap.Tab(adminTab.querySelector('.nav-link'));
+        }
+        // Подсветка активной вкладки
+        var navLinks = document.querySelectorAll('.nav-tabs .nav-link');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.forEach(function(l) {
+                    l.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    });
+</script>
+</body>
+</html>
